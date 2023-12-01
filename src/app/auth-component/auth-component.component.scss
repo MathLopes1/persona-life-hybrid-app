@@ -1,0 +1,85 @@
+.heading{
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-top: 70px;
+    margin-bottom: -60px;
+}
+.para{
+    font-size: 22px;
+    font-weight: 500;
+    padding-left: 20px;
+    margin-bottom: 70px;
+    color: #A6ABB1;
+}
+.input-item{
+    padding-left: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #303135;
+    height: 70px;
+    ion-input{
+        margin-top: -12px;
+    }
+}
+.ion-item{
+    margin-top: 20px;
+}
+.forget-text{
+    a{
+        text-decoration: none;
+        color: #1CC495;
+    }
+    text-align: end;
+    margin-bottom: -10px;
+    padding-right: 20px;
+}
+.login-button{
+  --ion-background-color: #1CC495; /* Define a cor de fundo usando a variável do Ionic */
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    --border-radius: 12px;
+    margin-top: 60px;
+    --box-shadow: none;
+
+}
+.google-button{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    --border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    --box-shadow: none;
+}
+.signup-text{
+    a{
+        text-decoration: none;
+        color: #1CC495;
+    }
+    padding-right: 20px;
+    text-align: end;
+}
+ion-footer {
+    display: block;
+    // position: relative;
+    -ms-flex-order: 1;
+    order: 1;
+    width: 100%;
+    z-index: 10;
+    --background: #14FFBC;
+}
+.copyright{
+    text-align: center;
+}
+.logo-container {
+  text-align: center;
+}
+
+.logo {
+  width: 70%; /* Ajuste o valor conforme necessário para o tamanho desejado */
+  height: auto;
+  margin: 0 auto; /* Isso centraliza a imagem horizontalmente */
+  display: block; /* Isso ajuda a centralizar a imagem no Firefox */
+}
