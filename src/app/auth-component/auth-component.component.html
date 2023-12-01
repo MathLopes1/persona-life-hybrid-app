@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
 
   <!-- Login Page -->
-  <div class="container"  *ngIf="screen == 'signin'">
+  <div class="container"  *ngIf="screen === 'signin'">
     <div class="logo-container">
       <ion-img class="logo" src="assets/logo.png"></ion-img>
     </div>
@@ -25,7 +25,7 @@
   </div>
 
   <!-- Sign up page -->
-  <div class="container"  *ngIf="screen == 'signup'">
+  <div class="container"  *ngIf="screen === 'signup'">
     <div class="logo-container">
       <ion-img class="logo" src="assets/logo.png"></ion-img>
     </div>
@@ -60,7 +60,7 @@
   </div>
 
   <!-- Forget password page -->
-  <div class="container"  *ngIf="screen == 'forget'">
+  <div class="container"  *ngIf="screen === 'forget'">
     <h1 class="heading">Esqueceu a sua senha?<br><br></h1>
     <p class="para">Digite o e-mail para redefinir</p>
     <ion-item lines="none" class="ion-item">
