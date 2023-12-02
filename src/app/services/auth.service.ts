@@ -7,10 +7,10 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
   API_URL = environment.API_URL;
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  userLogin(req){
-    return this.http.post(`${this.API_URL}/auth/login`,req);
+  userLogin(payload){
+    return this.http.post(`${this.API_URL}/auth/login`,payload);
   }
 
   userRegister(payload){

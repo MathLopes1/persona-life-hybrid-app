@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
@@ -13,7 +13,7 @@ export class AuthComponentComponent implements OnInit {
 
   screen: any = 'signin';
   formData: FormGroup;
-  isLoading= false;
+  isLoading = false;
 
   errorMessages = {
     name: {
@@ -23,40 +23,48 @@ export class AuthComponentComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private auth: AuthService, private toastController: ToastController) {
     this.formData = this.fb.group({
-      name: ['',[Validators.required]],
-      cpf: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
-      phone: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
-      zip_code: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(8)]],
-      state: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
-      country: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
-      address: ['',[Validators.required, Validators.minLength(1)]],
-      address_number: ['',[Validators.required, Validators.minLength(1)]],
-      email: ['',[Validators.required, Validators.email]],
-      password: ['',[Validators.required]],
+      name: ['', [Validators.required]],
+      cpf: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      phone: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      zip_code: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(8)]],
+      state: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      country: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      address: ['', [Validators.required, Validators.minLength(1)]],
+      address_number: ['', [Validators.required, Validators.minLength(1)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  change(event){
+  change(event) {
     this.screen = event;
   }
 
-  login(){
-    const formData: any = new FormData();
-    if(this.formData.valid){
-      this.isLoading = true;
-      formData.append('email', this.formData.get('email').value);
-      formData.append('password', this.formData.get('password').value);
-      console.log(this.formData);
-      this.auth.userLogin(formData).subscribe((data: any)=>{
+  login() {
+    this.isLoading = true;
+
+    const payload = {
+      email: this.formData.get('email').value,
+      password: this.formData.get('password').value
+    };
+
+    console.log(payload);
+    this.auth.userLogin(payload).subscribe(
+      (data: any) => {
         console.log(data);
-      });
-    }
+        this.presentSuccessToast('Bem-vindo ao PersonaLife');
+      },
+      (error) => {
+        console.error(error);
+        this.presentErrorToast('Usuário ou senha incorretos');
+      }
+    );
   }
 
-  register(){
-    if(this.formData.valid){
+  register() {
+    if (this.formData.valid) {
       this.isLoading = true;
 
       const payload = {
@@ -77,7 +85,8 @@ export class AuthComponentComponent implements OnInit {
         (data: any) => {
           console.log(data);
           this.change('signin');
-          this.presentSuccessToast();
+          this.presentSuccessToast('Cadastrado com Sucesso!');
+          this.formData.reset();
         },
         (error) => {
           console.error(error);
@@ -87,9 +96,9 @@ export class AuthComponentComponent implements OnInit {
     }
   }
 
-  async presentSuccessToast() {
+  async presentSuccessToast(message: string) {
     const toast = await this.toastController.create({
-      message: 'Cadastrado com Sucesso!',
+      message,
       duration: 2000,
       color: 'success',
       position: 'bottom',
