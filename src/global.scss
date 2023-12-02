@@ -33,7 +33,6 @@ ion-button {
   background-color: #14FFBC;
 }
 
-/* Estilo para ion-items no formulário de login */
 .container ion-item {
   --background: #14FFBC;
 }
@@ -45,4 +44,20 @@ ion-content {
 
 ion-footer ion-toolbar{
   --background: #14FFBC;
+}
+
+ion-tab-button {
+  --background-selected: #303135;
+}
+
+ion-tab-button {
+  background-color: #21A782;
+}
+
+ion-tab-bar {
+  background-color: #21A782;
+}
+
+ion-icon {
+  color: #303135;
 }

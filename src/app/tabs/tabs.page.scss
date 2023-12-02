@@ -1,1 +1,13 @@
+.custom-tabs {
+  --background: #ffffff; 
+  --background-selected: #14FFBC;
 
+  --color: #000000;
+  --color-selected: #14FFBC;
+
+  ion-tab-button {
+    &.custom-selected {
+      --border-color: #14FFBC;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.custom-header {
+  text-align: center;
+  background-color: #14FFBC !important;
+
+  ion-toolbar {
+    --background: #14FFBC; /* Substitua pelo código de cor desejado */
+  }
+
+  ion-title {
+    color: #303135;
+  }
+}
