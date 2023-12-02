@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:prod": "ng serve --proxy-config ./proxy.config.json --host $HOST --port $PORT",
+    "start:prod": "ng serve --host $HOST --port $PORT --disableHostCheck true",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
