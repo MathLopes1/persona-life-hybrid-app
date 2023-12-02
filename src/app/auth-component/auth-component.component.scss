@@ -63,7 +63,7 @@
 }
 ion-footer {
     display: block;
-    // position: relative;
+    position: relative;
     -ms-flex-order: 1;
     order: 1;
     width: 100%;
@@ -72,6 +72,7 @@ ion-footer {
 
     position: fixed;
     bottom: 0;
+    margin-top: 20px;
 }
 .copyright{
     text-align: center;
@@ -82,8 +83,12 @@ ion-footer {
 }
 
 .logo {
-  width: 70%; /* Ajuste o valor conforme necessário para o tamanho desejado */
+  width: 70%;
   height: auto;
-  margin: 0 auto; /* Isso centraliza a imagem horizontalmente */
-  display: block; /* Isso ajuda a centralizar a imagem no Firefox */
+  margin: 0 auto;
+  display: block;
+}
+
+.spacer {
+  height: 80px; 
 }
