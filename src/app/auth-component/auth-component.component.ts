@@ -15,11 +15,11 @@ export class AuthComponentComponent implements OnInit {
   constructor(private fb: FormBuilder, private auth: AuthService) {
     this.formData = this.fb.group({
       name: ['',[Validators.required]],
-      cpf: ['',[Validators.required, Validators.minLength(1), Validators.minLength(11)]],
-      phone: ['',[Validators.required, Validators.minLength(1), Validators.minLength(11)]],
-      zip_code: ['',[Validators.required, Validators.minLength(1), Validators.minLength(11)]],
-      state: ['',[Validators.required, Validators.minLength(1), Validators.minLength(11)]],
-      country: ['',[Validators.required, Validators.minLength(1), Validators.minLength(11)]],
+      cpf: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      phone: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      zip_code: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(8)]],
+      state: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      country: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
       email: ['',[Validators.required, Validators.email]],
       password: ['',[Validators.required]],
     });
