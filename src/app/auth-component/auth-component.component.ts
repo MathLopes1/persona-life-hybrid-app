@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-component',
@@ -21,7 +22,7 @@ export class AuthComponentComponent implements OnInit {
     }
   };
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private toastController: ToastController) {
+  constructor(private fb: FormBuilder, private auth: AuthService, private toastController: ToastController, private router: Router) {
     this.formData = this.fb.group({
       name: ['', [Validators.required]],
       cpf: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
@@ -54,6 +55,7 @@ export class AuthComponentComponent implements OnInit {
     this.auth.userLogin(payload).subscribe(
       (data: any) => {
         console.log(data);
+        this.router.navigate(['/home/tabs/tab1']);
         this.presentSuccessToast('Bem-vindo ao PersonaLife');
       },
       (error) => {
