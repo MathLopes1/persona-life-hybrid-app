@@ -17,7 +17,7 @@ exports.config = {
   },
   directConnect: true,
   SELENIUM_PROMISE_MANAGER: false,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'persona-life-app-production.up.railway.app',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
