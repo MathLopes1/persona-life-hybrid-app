@@ -33,19 +33,43 @@
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Nome</legend>
-          <ion-input formControlName="name" type="text" placeholder="Matheus Lopes"></ion-input>
-        </fieldset>
-      </ion-item>
-      <ion-item lines="none" class="ion-item">
-        <fieldset  class="input-item">
-          <legend>Email</legend>
-          <ion-input formControlName="email" type="email" placeholder="nome@dominio.com"></ion-input>
+          <ion-input formControlName="name" type="text" placeholder="Nome"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Cpf</legend>
           <ion-input formControlName="cpf" type="cpf" placeholder="XXX-XXX-XXX-XX"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Celular</legend>
+          <ion-input formControlName="phone" type="phone" placeholder="(XX) XXXXX-XXXX"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>CEP</legend>
+          <ion-input formControlName="zip_code" type="zip_code" placeholder="(XX) XXXXX-XXXX"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Estado</legend>
+          <ion-input formControlName="state" type="state" placeholder="Pernambuco"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Cidade</legend>
+          <ion-input formControlName="country" type="country" placeholder="Pernambuco"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Email</legend>
+          <ion-input formControlName="email" type="email" placeholder="nome@dominio.com"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
@@ -72,10 +96,10 @@
     <p class="signup-text"><a (click)="change('signin')">Voltar</a></p>
     <ion-button class="login-button" expand="block">Resetar Senha</ion-button>
   </div>
+  <ion-footer>
+    <ion-toolbar>
+      <p class="copyright">PersonaLife</p>
+    </ion-toolbar>
+  </ion-footer>
 
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <p class="copyright">Persona Life</p>
-  </ion-toolbar>
-</ion-footer>

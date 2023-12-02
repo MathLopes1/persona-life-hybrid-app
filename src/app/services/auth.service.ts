@@ -10,10 +10,10 @@ export class AuthService {
   constructor(private http:HttpClient) {}
 
   userLogin(req){
-    return this.http.post(`${this.API_URL}login`,req);
+    return this.http.post(`${this.API_URL}/auth/login`,req);
   }
 
   userRegister(req){
-    return this.http.post(`${this.API_URL}register`,req);
+    return this.http.post(`${this.API_URL}/user/register`,req);
   }
 }
