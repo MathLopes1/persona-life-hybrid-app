@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-auth-component',
@@ -9,10 +10,18 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./auth-component.component.scss'],
 })
 export class AuthComponentComponent implements OnInit {
+
   screen: any = 'signin';
   formData: FormGroup;
   isLoading= false;
-  constructor(private fb: FormBuilder, private auth: AuthService) {
+
+  errorMessages = {
+    name: {
+      required: 'Nome é obrigatório',
+    }
+  };
+
+  constructor(private fb: FormBuilder, private auth: AuthService, private toastController: ToastController) {
     this.formData = this.fb.group({
       name: ['',[Validators.required]],
       cpf: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
@@ -20,6 +29,8 @@ export class AuthComponentComponent implements OnInit {
       zip_code: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(8)]],
       state: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
       country: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
+      address: ['',[Validators.required, Validators.minLength(1)]],
+      address_number: ['',[Validators.required, Validators.minLength(1)]],
       email: ['',[Validators.required, Validators.email]],
       password: ['',[Validators.required]],
     });
@@ -45,21 +56,56 @@ export class AuthComponentComponent implements OnInit {
   }
 
   register(){
-    const formData: any = new FormData();
     if(this.formData.valid){
       this.isLoading = true;
-      formData.append('name', this.formData.get('name').value);
-      formData.append('cpf', this.formData.get('cpf').value);
-      formData.append('phone', this.formData.get('phone').value);
-      formData.append('zip_code', this.formData.get('zip_code').value);
-      formData.append('state', this.formData.get('state').value);
-      formData.append('country', this.formData.get('country').value);
-      formData.append('email', this.formData.get('email').value);
-      formData.append('password', this.formData.get('password').value);
+
+      const payload = {
+        name: this.formData.get('name').value,
+        cpf: this.formData.get('cpf').value,
+        phone: this.formData.get('phone').value,
+        zip_code: this.formData.get('zip_code').value,
+        address: this.formData.get('address').value,
+        address_number: this.formData.get('address_number').value,
+        state: this.formData.get('state').value,
+        country: this.formData.get('country').value,
+        email: this.formData.get('email').value,
+        password: this.formData.get('password').value,
+      };
+
       console.log(this.formData);
-      this.auth.userRegister(formData).subscribe((data: any)=>{
-        console.log(data);
-      });
+      this.auth.userRegister(payload).subscribe(
+        (data: any) => {
+          console.log(data);
+          this.change('signin');
+          this.presentSuccessToast();
+        },
+        (error) => {
+          console.error(error);
+          this.presentErrorToast('Erro ao criar o registro');
+        }
+      );
     }
+  }
+
+  async presentSuccessToast() {
+    const toast = await this.toastController.create({
+      message: 'Cadastrado com Sucesso!',
+      duration: 2000,
+      color: 'success',
+      position: 'bottom',
+    });
+
+    toast.present();
+  }
+
+  async presentErrorToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      color: 'danger',
+      position: 'bottom',
+    });
+
+    toast.present();
   }
 }

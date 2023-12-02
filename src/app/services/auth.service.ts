@@ -13,7 +13,7 @@ export class AuthService {
     return this.http.post(`${this.API_URL}/auth/login`,req);
   }
 
-  userRegister(req){
-    return this.http.post(`${this.API_URL}/user/register`,req);
+  userRegister(payload){
+    return this.http.post(`${this.API_URL}/user/register`, payload);
   }
 }
