@@ -1,4 +1,4 @@
-<ion-header [translucent]="true"class="custom-header">
+<ion-header [translucent]="true" class="custom-header">
   <ion-toolbar>
     <ion-title>
       Perfil
@@ -7,9 +7,38 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-content class="ion-text-center ion-padding">
+      <div class="profile-container">
+        <div class="profile-picture">
+          <ion-img src="assets/perfil-foto.png" class="rounded-image"></ion-img>
+        </div>
+
+        <div class="profile-description">
+          <ion-text>
+
+            Entusiasta fitness e amante da vida saudável. 🏋️‍♀️✨ Minha jornada inclui exercícios revigorantes, escolhas alimentares conscientes e muita motivação.💪🌿 #Fitness #BemEstar"          </ion-text>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-row>
+        <ion-col>Nome</ion-col>
+        <ion-col>CPF</ion-col>
+        <ion-col>Telefone</ion-col>
+        <ion-col>Estado</ion-col>
+        <ion-col>Cidade</ion-col>
+        <ion-col>Endereço</ion-col>
+        <ion-col>Número</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>{{ "" }}</ion-col>
+        <ion-col>{{ "cpf" }}</ion-col>
+        <ion-col>{{ "telefone" }}</ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-card-content>
 </ion-content>

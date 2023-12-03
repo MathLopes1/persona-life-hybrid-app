@@ -10,3 +10,23 @@
     color: #303135;
   }
 }
+
+.profile-container {
+  display: flex;  // Use Flexbox para posicionar os itens lado a lado
+  align-items: center;  // Alinhe os itens verticalmente ao centro
+}
+
+.profile-picture {
+  width: 100px;  // Ajuste conforme necessário
+  height: 100px;  // Ajuste conforme necessário
+  border-radius: 50%;
+  margin-right: 10px;  // Adicione um espaçamento entre a foto e a descrição
+}
+
+.profile-description {
+  flex: 1;  // Ocupa o espaço restante disponível
+}
+
+.rounded-image {
+  border-radius: 50%;
+}

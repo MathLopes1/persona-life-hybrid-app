@@ -5,6 +5,8 @@ import { AuthService } from '../services/auth.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CepService } from '../services/cep.service';
+import * as jwt_decode from 'jwt-decode';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-auth-component',
@@ -28,7 +30,8 @@ export class AuthComponentComponent implements OnInit {
     private auth: AuthService,
     private cepService: CepService,
     private toastController: ToastController,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
   ) {
     this.formData = this.fb.group({
       name: ['', [Validators.required]],
@@ -62,6 +65,13 @@ export class AuthComponentComponent implements OnInit {
     this.auth.userLogin(payload).subscribe(
       (data: any) => {
         console.log(data);
+        if (data && data.access_token) {
+          const userId = this.tokenService.getUserIdFromToken(data.access_token);
+          if (userId) {
+            localStorage.setItem('userId', userId);
+          }
+        }
+
         this.router.navigate(['/home/tabs/tab1']);
         this.presentSuccessToast('Bem-vindo ao PersonaLife');
       },
