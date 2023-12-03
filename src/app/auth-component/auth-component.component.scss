@@ -18,8 +18,12 @@
     border-radius: 12px;
     border: 2px solid #303135;
     height: 70px;
+    legend{
+      color: #303135;
+    }
     ion-input{
         margin-top: -12px;
+        color: #303135;
     }
 }
 .ion-item{
@@ -96,4 +100,7 @@ ion-footer {
 .error-message {
   color: red;
   font-size: 14px;
+}
+.legend {
+  color: #303135;
 }
