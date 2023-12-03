@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import { InfiniteScrollCustomEvent, ModalController } from '@ionic/angular';
+import { ProfessionalDetailsModalPage } from '../professional-details-modal/professional-details-modal.page';
 
 @Component({
   selector: 'app-tab1',
@@ -14,7 +15,7 @@ export class Tab1Page implements OnInit {
   professionals: any[] = [];
   originalProfessionals: any[] = [];
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,  private modalController: ModalController) {}
   ngOnInit() {
     this.loadUserData();
     this.loadProfessionals();
@@ -207,5 +208,16 @@ export class Tab1Page implements OnInit {
     } else {
       this.professionals = this.originalProfessionals.slice();
     }
+  }
+
+  async openProfessionalDetails(professional: any) {
+    const modal = await this.modalController.create({
+      component: ProfessionalDetailsModalPage,
+      componentProps: {
+        selectedProfessional: professional
+      }
+    });
+
+    await modal.present();
   }
 }

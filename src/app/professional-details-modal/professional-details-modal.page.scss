@@ -1,0 +1,78 @@
+ion-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+ion-label {
+  margin-left: 20px;
+}
+
+ion-list {
+  ion-item {
+    ion-avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+ion-icon {
+  color: #21A782;
+}
+
+.text {
+  color: #303135;
+}
+
+ion-header ion-toolbar{
+  --background: #14FFBC;
+}
+
+ion-list {
+  --background: #14FFBC;
+  background-color: #14FFBC;
+  border-radius: 8px;
+  margin: 0 -1px;
+  padding: 13px;
+
+  ion-item {
+    --background: #14FFBC !important;
+    ion-label {
+      --background: #14FFBC !important;
+    }
+  }
+}
+
+ion-datetime {
+  --background: #14FFBC;
+  color: #303135;
+}
+
+.time-buttons-row {
+  flex-wrap: wrap;
+  padding-right: 20px;
+}
+
+.time-button {
+  flex-basis: calc(33.33% - 10px);
+  width: 100%;
+  margin: 5px;
+  color: #303135;
+  border: #303135;
+}
+
+.time-button.active {
+  --ion-background-color: #1CC495;
+  --box-shadow: none;
+  color: #303135;
+}
+
+.schedule-button{
+  --ion-background-color: #1CC495;
+    height: 50px;
+    --border-radius: 12px;
+    margin-top: 60px;
+    --box-shadow: none;
+    color: #303135;
+    font-weight: bold;
+}
