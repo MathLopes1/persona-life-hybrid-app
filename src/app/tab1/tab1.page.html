@@ -19,9 +19,9 @@
         <img [src]="professional.photoUrl" alt="Foto do Profissional">
       </ion-avatar>
       <ion-label>
-        <h2>{{ professional.name }}</h2>
-        <p>{{ professional.specialty }}</p>
-        <p>{{ professional.city }}, {{ professional.state }}</p>
+        <h2 class="text">{{ professional.name }}</h2>
+        <p class="text">{{ professional.specialty }}</p>
+        <p class="text">{{ professional.city }}, {{ professional.state }}</p>
       </ion-label>
     </ion-item>
     <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">

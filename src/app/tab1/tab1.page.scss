@@ -3,7 +3,7 @@
   background-color: #14FFBC !important;
 
   ion-toolbar {
-    --background: #14FFBC; 
+    --background: #14FFBC;
   }
 
   ion-title {
@@ -30,5 +30,9 @@ ion-list {
 ion-searchbar{
   --background: #14FFBC;
   border: #303135;
+  color: #303135;
+}
+
+.text {
   color: #303135;
 }
