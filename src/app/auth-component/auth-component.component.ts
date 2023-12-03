@@ -134,7 +134,7 @@ export class AuthComponentComponent implements OnInit {
       message,
       duration: 2000,
       color: 'success',
-      position: 'bottom',
+      position: 'top',
     });
 
     toast.present();
@@ -145,7 +145,7 @@ export class AuthComponentComponent implements OnInit {
       message,
       duration: 2000,
       color: 'danger',
-      position: 'bottom',
+      position: 'top',
     });
 
     toast.present();
