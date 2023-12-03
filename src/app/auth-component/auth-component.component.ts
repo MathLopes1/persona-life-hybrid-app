@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from '../services/auth.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { CepService } from '../services/cep.service';
 
 @Component({
   selector: 'app-auth-component',
@@ -22,7 +23,13 @@ export class AuthComponentComponent implements OnInit {
     }
   };
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private toastController: ToastController, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private auth: AuthService,
+    private cepService: CepService,
+    private toastController: ToastController,
+    private router: Router
+  ) {
     this.formData = this.fb.group({
       name: ['', [Validators.required]],
       cpf: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(11)]],
@@ -82,6 +89,7 @@ export class AuthComponentComponent implements OnInit {
         password: this.formData.get('password').value,
       };
 
+
       console.log(this.formData);
       this.auth.userRegister(payload).subscribe(
         (data: any) => {
@@ -95,6 +103,20 @@ export class AuthComponentComponent implements OnInit {
           this.presentErrorToast('Erro ao criar o registro');
         }
       );
+    }
+  }
+
+  findCep() {
+    const zipCode = this.formData.get('zip_code').value;
+
+    if (zipCode) {
+      this.cepService.findAddress(zipCode).subscribe((res: any) => {
+        this.formData.patchValue({
+          country: res.localidade,
+          state: res.uf,
+          address: res.bairro + ', ' + res.logradouro,
+        });
+      });
     }
   }
 

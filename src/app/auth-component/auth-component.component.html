@@ -33,61 +33,61 @@
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Nome</legend>
-          <ion-input formControlName="name" type="text" placeholder="Nome"></ion-input>
+          <ion-input formControlName="name" type="text" placeholder="Digite seu nome completo"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Cpf</legend>
-          <ion-input formControlName="cpf" type="cpf" placeholder="XXX-XXX-XXX-XX"></ion-input>
+          <ion-input formControlName="cpf" type="cpf" placeholder="Digite seu cpf com 11 dígitos"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Celular</legend>
-          <ion-input formControlName="phone" type="phone" placeholder="(XX) XXXXX-XXXX"></ion-input>
+          <ion-input formControlName="phone" type="phone" placeholder="Digite seu número com 11 dígitos"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>CEP</legend>
-          <ion-input formControlName="zip_code" type="zip_code" placeholder="(XX) XXXXX-XXXX"></ion-input>
+          <ion-input formControlName="zip_code" type="zip_code" placeholder="Digite seu CEP" (ionChange)="findCep()"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Estado</legend>
-          <ion-input formControlName="state" type="state" placeholder="Pernambuco"></ion-input>
+          <ion-input formControlName="state" type="state" placeholder="Digite seu Estado"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Cidade</legend>
-          <ion-input formControlName="country" type="country" placeholder="Recife"></ion-input>
+          <ion-input formControlName="country" type="country" placeholder="Digite sua Cidade"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Endereço</legend>
-          <ion-input formControlName="address" type="address" placeholder="Pernambuco"></ion-input>
+          <ion-input formControlName="address" type="address" placeholder="Digite seu endereço"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Número</legend>
-          <ion-input formControlName="address_number" type="address_number" placeholder="Pernambuco"></ion-input>
+          <ion-input formControlName="address_number" type="address_number" placeholder="Digite o número de residência"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset  class="input-item">
           <legend>Email</legend>
-          <ion-input formControlName="email" type="email" placeholder="nome@dominio.com"></ion-input>
+          <ion-input formControlName="email" type="email" placeholder="Digite seu email"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
           <legend>Senha</legend>
-          <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+          <ion-input formControlName="password" type="password" placeholder="Digite sua senha"></ion-input>
         </fieldset>
       </ion-item>
       <p class="signup-text">Já possuo um cadastro&nbsp;<a (click)="change('signin')">Entrar?</a></p>

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://persona-life-api-production.up.railway.app'
+  API_URL: 'https://persona-life-api-production.up.railway.app',
+  CEP_URL: 'https://viacep.com.br/ws/{CEP}/json/'
 };
 
 /*
