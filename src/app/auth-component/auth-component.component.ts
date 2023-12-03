@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { CepService } from '../services/cep.service';
-import * as jwt_decode from 'jwt-decode';
 import { TokenService } from '../services/token.service';
 
 @Component({
@@ -66,9 +64,10 @@ export class AuthComponentComponent implements OnInit {
       (data: any) => {
         console.log(data);
         if (data && data.access_token) {
-          const userId = this.tokenService.getUserIdFromToken(data.access_token);
-          if (userId) {
-            localStorage.setItem('userId', userId);
+          const decoded = this.tokenService.getUserIdFromToken(data.access_token);
+          if (decoded) {
+            localStorage.setItem('userId', decoded.userId);
+            localStorage.setItem('customerId', decoded.customerId);
           }
         }
 

@@ -5,15 +5,11 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class UserService {
   API_URL = environment.API_URL;
   constructor(private http: HttpClient) {}
 
-  userLogin(payload){
-    return this.http.post(`${this.API_URL}/auth/login`, payload);
-  }
-
-  userRegister(payload){
-    return this.http.post(`${this.API_URL}/user/register`, payload);
+  findUserInformationById(id: any){
+    return this.http.get(`${this.API_URL}/user/{id}`.replace('{id}', id));
   }
 }

@@ -30,3 +30,32 @@
 .rounded-image {
   border-radius: 50%;
 }
+
+ion-card-content {
+  background-color: #21A782;
+}
+
+ion-list {
+  background-color: #21A782; /* Cor de fundo para o ion-list */
+  border-radius: 8px; /* Borda arredondada */
+  margin: 0 -1px; /* Margens para reduzir o espaço nas laterais */
+}
+
+.custom-information {
+  background-color: #14FFBC;
+  color: #303135;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #303135;
+}
+
+ion-text{
+  color: #303135
+}
+
+.logout-button {
+  margin-top: 110px; /* Adiciona margem acima do botão */
+  --border-radius: 4px; /* Borda arredondada para o botão */
+  --background: #21A782; /* Cor de fundo do botão de logout */
+  --color: #303135; /* Cor do texto do botão de logout */
+}

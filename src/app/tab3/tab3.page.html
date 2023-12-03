@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
   <ion-card>
     <ion-card-content class="ion-text-center ion-padding">
       <div class="profile-container">
@@ -15,30 +15,55 @@
         </div>
 
         <div class="profile-description">
-          <ion-text>
+          <ion-text >
 
             Entusiasta fitness e amante da vida saudável. 🏋️‍♀️✨ Minha jornada inclui exercícios revigorantes, escolhas alimentares conscientes e muita motivação.💪🌿 #Fitness #BemEstar"          </ion-text>
         </div>
       </div>
     </ion-card-content>
   </ion-card>
-  <ion-card-content>
-    <ion-list>
-      <ion-row>
-        <ion-col>Nome</ion-col>
-        <ion-col>CPF</ion-col>
-        <ion-col>Telefone</ion-col>
-        <ion-col>Estado</ion-col>
-        <ion-col>Cidade</ion-col>
-        <ion-col>Endereço</ion-col>
-        <ion-col>Número</ion-col>
-      </ion-row>
 
-      <ion-row>
-        <ion-col>{{ "" }}</ion-col>
-        <ion-col>{{ "cpf" }}</ion-col>
-        <ion-col>{{ "telefone" }}</ion-col>
-      </ion-row>
+  <ion-content class="ion-text-center ion-padding">
+    <ion-list>
+          <ion-row>
+            <ion-col class="custom-information">Suas Informações</ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">Nome</ion-col>
+            <ion-col class="custom-information">{{ userData.name }}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">CPF</ion-col>
+            <ion-col class="custom-information">{{ userData.cpf }}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">Telefone</ion-col>
+            <ion-col class="custom-information">{{ userData.phone }}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">CEP</ion-col>
+            <ion-col class="custom-information">{{ userData.zip_code }}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">Estado</ion-col>
+            <ion-col class="custom-information">{{ userData.state }}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">Cidade</ion-col>
+            <ion-col class="custom-information">{{ userData.country }}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">Endereço</ion-col>
+            <ion-col class="custom-information">{{ userData.address }}</ion-col>
+          </ion-row>
+          <ion-row *ngIf="userData">
+            <ion-col class="custom-information">Residência</ion-col>
+            <ion-col class="custom-information">{{ userData.address_number }}</ion-col>
+          </ion-row>
     </ion-list>
-  </ion-card-content>
+
+    <ion-button class="logout-button" (click)="logout()" expand="block">SAIR</ion-button>
+  </ion-content>
+
 </ion-content>

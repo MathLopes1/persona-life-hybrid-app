@@ -14,11 +14,14 @@ export class TokenService {
     }
   }
 
-  getUserIdFromToken(token: string): string | null {
+  getUserIdFromToken(token: string) {
     const decodedToken: any = this.decodeToken(token);
 
     if (decodedToken && decodedToken.userId) {
-      return decodedToken.userId;
+      return {
+        userId: decodedToken.userId,
+        customerId: decodedToken.customerId
+      };
     }
 
     return null;
