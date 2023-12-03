@@ -3,10 +3,32 @@
   background-color: #14FFBC !important;
 
   ion-toolbar {
-    --background: #14FFBC; /* Substitua pelo código de cor desejado */
+    --background: #14FFBC; 
   }
 
   ion-title {
     color: #303135;
   }
+}
+
+
+ion-list {
+  --background: #14FFBC;
+  background-color: #14FFBC;
+  border-radius: 8px;
+  margin: 0 -1px;
+  padding: 13px;
+
+  ion-item {
+    --background: #14FFBC !important;
+    ion-label {
+      --background: #14FFBC !important;
+    }
+  }
+}
+
+ion-searchbar{
+  --background: #14FFBC;
+  border: #303135;
+  color: #303135;
 }
