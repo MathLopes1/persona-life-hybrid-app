@@ -3,7 +3,7 @@
   background-color: #14FFBC !important;
 
   ion-toolbar {
-    --background: #14FFBC; /* Substitua pelo código de cor desejado */
+    --background: #14FFBC;
   }
 
   ion-title {
@@ -12,19 +12,19 @@
 }
 
 .profile-container {
-  display: flex;  // Use Flexbox para posicionar os itens lado a lado
-  align-items: center;  // Alinhe os itens verticalmente ao centro
+  display: flex;
+  align-items: center;
 }
 
 .profile-picture {
-  width: 100px;  // Ajuste conforme necessário
-  height: 100px;  // Ajuste conforme necessário
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-right: 10px;  // Adicione um espaçamento entre a foto e a descrição
+  margin-right: 10px;
 }
 
 .profile-description {
-  flex: 1;  // Ocupa o espaço restante disponível
+  flex: 1;
 }
 
 .rounded-image {
@@ -36,9 +36,9 @@ ion-card-content {
 }
 
 ion-list {
-  background-color: #21A782; /* Cor de fundo para o ion-list */
-  border-radius: 8px; /* Borda arredondada */
-  margin: 0 -1px; /* Margens para reduzir o espaço nas laterais */
+  background-color: #21A782;
+  border-radius: 8px;
+  margin: 0 -1px;
 }
 
 .custom-information {
@@ -54,8 +54,8 @@ ion-text{
 }
 
 .logout-button {
-  margin-top: 110px; /* Adiciona margem acima do botão */
-  --border-radius: 4px; /* Borda arredondada para o botão */
-  --background: #21A782; /* Cor de fundo do botão de logout */
-  --color: #303135; /* Cor do texto do botão de logout */
+  margin-top: 80px;
+  --border-radius: 4px;
+  --background: #21A782;
+  --color: #303135;
 }
