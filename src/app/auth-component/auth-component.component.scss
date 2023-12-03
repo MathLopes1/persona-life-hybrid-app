@@ -4,6 +4,8 @@
     padding-left: 20px;
     margin-top: 70px;
     margin-bottom: -60px;
+    color: #303135;
+    font-weight: bold;
 }
 .para{
     font-size: 22px;
@@ -39,14 +41,15 @@
     padding-right: 20px;
 }
 .login-button{
-  --ion-background-color: #1CC495; /* Define a cor de fundo usando a variável do Ionic */
+  --ion-background-color: #1CC495;
     padding-left: 20px;
     padding-right: 20px;
     height: 50px;
     --border-radius: 12px;
     margin-top: 60px;
     --box-shadow: none;
-
+    color: #303135;
+    font-weight: bold;
 }
 .google-button{
     padding-left: 20px;
@@ -64,6 +67,8 @@
     }
     padding-right: 20px;
     text-align: end;
+    color: #303135;
+    font-weight: bold;
 }
 ion-footer {
     display: block;
