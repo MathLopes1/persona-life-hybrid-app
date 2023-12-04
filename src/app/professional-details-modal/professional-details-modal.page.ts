@@ -18,6 +18,7 @@ export class ProfessionalDetailsModalPage implements OnInit {
   selectedDate: any | null = null;
   lastSelectedTime: string | null = null;
 
+
   ngOnInit() {
   }
 
@@ -96,7 +97,7 @@ export class ProfessionalDetailsModalPage implements OnInit {
   }
 
   isTimeActive(time: string): boolean {
-    return this.selectedTime === time;
+    return this.selectedDate !== null && (this.lastSelectedTime !== time || this.selectedTime === time);
   }
 
   async presentSuccessToast() {

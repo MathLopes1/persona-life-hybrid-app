@@ -53,7 +53,7 @@
         class="time-button"
         [class.active]="isTimeActive(time)"
         (click)="selectTime(time)"
-        [disabled]="isTimeActive(time)"
+        [disabled]="!isTimeActive(time)"
       >
         {{ time }}
       </ion-button>
