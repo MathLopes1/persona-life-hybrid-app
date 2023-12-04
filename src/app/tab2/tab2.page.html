@@ -1,15 +1,30 @@
 <ion-header [translucent]="true" class="custom-header">
   <ion-toolbar>
     <ion-title>
-      Agendamentos
+      <span style="font-weight: bold; color: #303135;"> Agendamentos </span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Agendamentos</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <ion-searchbar
+    animated
+    placeholder="Seus Agendamentos"
+    (ionChange)="onSearch($event)"
+  ></ion-searchbar>
+
+  <ion-list >
+    <ion-item *ngFor="let schedule of schedules" (click)="showDeleteConfirmation(schedule)">
+      <ion-avatar slot="start">
+        <img [src]="schedule.photoUrl" alt="Foto do Profissional">
+      </ion-avatar>
+      <ion-label>
+        <h2 class="text">{{ schedule.healthProviderName }}</h2>
+        <p class="text">{{ schedule.healthProviderSpecialty }}</p>
+        <p class="text">{{ schedule.schedulesDate }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>

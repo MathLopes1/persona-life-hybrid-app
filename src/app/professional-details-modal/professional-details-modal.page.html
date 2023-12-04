@@ -45,7 +45,7 @@
     </ion-item>
   </ion-list>
 
-  <ion-datetime presentation="date" value="2023-12-06T00:00:00" min="2020-01-01T00:00:00" max="2025-12-31T23:59:59"></ion-datetime>
+  <ion-datetime presentation="date" value="2023-12-06T00:00:00" min="2020-01-01T00:00:00" max="2025-12-31T23:59:59" (ionChange)="updateSelectedDate($event)"></ion-datetime>
 
   <ion-row class="time-buttons-row">
     <ion-col *ngFor="let time of availableTimes" size="4">
